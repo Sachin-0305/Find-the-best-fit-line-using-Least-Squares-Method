@@ -1,4 +1,4 @@
-# Implementation of Univariate Linear Regression
+![Screenshot 2024-08-23 105459](https://github.com/user-attachments/assets/5902eaf9-c7a0-4310-bbc2-68799f0f3229)# Implementation of Univariate Linear Regression
 ## AIM:
 To implement univariate Linear Regression to fit a straight line using least squares.
 
@@ -20,13 +20,52 @@ To implement univariate Linear Regression to fit a straight line using least squ
 ```
 /*
 Program to implement univariate Linear Regression to fit a straight line using least squares.
-Developed by: 
-RegisterNumber:  
+Developed by: SACHIN M
+RegisterNumber:  212223040177
 */
+import numpy as np
+import matplotlib.pyplot as plt
+
+#preprocessing input data
+
+X=np.array(eval(input()))
+Y=np.array(eval(input()))
+
+#mean
+X_mean=np.mean(X)
+Y_mean=np.mean(Y)
+num=0 #for slope
+denom=0 #for slope
+
+#to find sum of (xi-x') & (yi-y') & (xi-x')^2
+for i in range(len(X)):
+    num+=(X[i]-X_mean)*(Y[i]-Y_mean)
+    denom+=(X[i]-X_mean)**2
+
+#to find slope
+m=num/denom
+
+b=Y_mean-m*X_mean
+print(m,b)
+
+Y_predicted=m*X+b
+print(Y_predicted)
+
+#to plot graphplt.scatter(X,Y)
+plt.plot(X,Y_predicted,color="red")
+plt.show()
+
 ```
 
 ## Output:
-![best fit line](sam.png)
+# SLOPE AND Y-INTERCEPT:
+![Screenshot 2024-08-23 105446](https://github.com/user-attachments/assets/ec7cdb04-e2c5-4981-a98f-226160c3eb41)
+
+# Y PREDICTED:
+![Screenshot 2024-08-23 105452](https://github.com/user-attachments/assets/589b2574-03d5-48e8-8459-acd8a5938197)
+
+# GRAPH:
+![Screenshot 2024-08-23 105459](https://github.com/user-attachments/assets/bc7bd28d-0caa-41c7-816a-6198d90317c9)
 
 
 ## Result:
